@@ -1,0 +1,21 @@
+{
+  "name": "@pinprompt/site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun dev.ts",
+    "build": "bun build.ts",
+    "build:ci": "bun run --cwd ../.. build:ci && bun build.ts",
+    "shots": "bun scripts/shots.ts"
+  },
+  "devDependencies": {
+    "@pinprompt/kit": "workspace:*",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "marked": "^18.2.1",
+    "playwright-core": "^1.65.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}

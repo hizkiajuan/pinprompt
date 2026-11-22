@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinprompt Manual Overlay Fixture</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+      }
+
+      .hero {
+        display: grid;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .card {
+        padding: 20px;
+        border-radius: 18px;
+        background: white;
+        border: 1px solid #cbd5e1;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      }
+
+      .card footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 18px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 999px;
+        padding: 10px 14px;
+        color: white;
+        background: #2563eb;
+        cursor: pointer;
+      }
+
+      .shadcn-card {
+        border: 1px solid rgb(226 232 240);
+        background: rgb(255 255 255);
+        box-shadow: 0 1px 2px rgb(15 23 42 / 0.08);
+      }
+
+      .fake-region {
+        margin-top: 28px;
+        min-height: 120px;
+        border: 2px dashed #94a3b8;
+        border-radius: 18px;
+        padding: 20px;
+        display: grid;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <span>Serve this file on localhost for Phase 03 manual extension checks.</span>
+        <h1>Pinprompt overlay fixture</h1>
+        <p>
+          Use click capture on the CTA button, drag over the dashed region, and test a tiny drag
+          under 12x12 pixels to confirm it is ignored.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="card shadcn-card" id="billing-card" data-testid="billing-card">
+          <h2>Billing overview</h2>
+          <p>Likely shadcn Card styles and a fake React fiber hook are attached to this card.</p>
+          <footer>
+            <button
+              id="save-button"
+              class="inline-flex items-center rounded-md border bg-primary text-primary-foreground shadow-sm"
+            >
+              Save changes
+            </button>
+          </footer>
+        </article>
+
+        <article class="card">
+          <h2>Release checklist</h2>
+          <ul>
+            <li>Smoke test localhost app</li>
+            <li>Verify drag capture</li>
+            <li>Inspect screenshot crop ref</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="fake-region">
+        <strong>Drag target</strong>
+        <p>Draw a 40x20 region here for a drag capture.</p>
+        <p>Draw a 5x5 region here to confirm the minimum drag threshold.</p>
+      </section>
+    </main>
+
+    <script>
+      const appFiber = { tag: 0, type: { displayName: "FixturePage" } };
+      const cardFiber = { tag: 0, type: { displayName: "BillingCard" }, return: appFiber };
+      const hostFiber = {
+        tag: 5,
+        type: "article",
+        return: cardFiber,
+        _debugSource: { fileName: "/src/components/billing-card.tsx" },
+      };
+      const card = document.getElementById("billing-card");
+
+      if (card) {
+        card.__reactFiber$pinpromptFixture = hostFiber;
+      }
+    </script>
+  </body>
+</html>

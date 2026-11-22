@@ -1,0 +1,17 @@
+{
+  "name": "pinprompt",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": { "enabled": true },
+  // A zone route, not a Custom Domain: a Custom Domain gets its own certificate, which puts the
+  // hostname in public Certificate Transparency logs. The route sits on a proxied
+  // `AAAA pinprompt -> 100::` record (made through the Cloudflare API; wrangler doesn't create it)
+  // and is served under Universal SSL's *.hizkiajuan.com wildcard.
+  "routes": [{ "pattern": "pinprompt.hizkiajuan.com/*", "zone_name": "hizkiajuan.com" }],
+  "assets": {
+    // Static only: the landing page, the privacy policy, fonts and the extension zip (build.ts).
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+  },
+}

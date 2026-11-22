@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Allo";
+  src: url("/fonts/allo/allo.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader/newsreader.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader/newsreader-italic.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces/fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/geist-mono.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/fonts/figtree/figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/fonts/instrument-sans/instrument-sans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-stretch: 75% 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Caveat";
+  src: url("/fonts/caveat/caveat.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sacramento";
+  src: url("/fonts/sacramento/sacramento.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("/fonts/zilla-slab/zilla-slab-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("/fonts/zilla-slab/zilla-slab-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Allo Fallback";
+  src: local("Arial"), local("ArialMT"), local("Liberation Sans");
+  size-adjust: 105.62%;
+  ascent-override: 91.72%;
+  descent-override: 22.84%;
+  line-gap-override: 0%;
+}
+
+:root {
+  --font-sans: "Allo", "Allo Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Newsreader", "Iowan Old Style", Charter, Georgia, serif;
+  --font-display: "Fraunces", "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-rounded: "Allo", ui-rounded, "SF Pro Rounded", "Allo Fallback", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, "Cascadia Mono", Consolas, monospace;
+  --font-geometric: "Figtree", "Avenir Next", Avenir, "Century Gothic", "Allo Fallback", sans-serif;
+  --font-condensed: "Instrument Sans", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-hand: "Caveat", "Bradley Hand", "Segoe Print", cursive;
+  --font-script: "Sacramento", "Snell Roundhand", "Segoe Script", cursive;
+  --font-slab: "Zilla Slab", Rockwell, "Roboto Slab", Georgia, serif;
+}

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pinprompt: point at it, say what to change</title>
+    <meta
+      name="description"
+      content="A Chrome extension for React developers. Comment on your running app like you comment in Figma, then copy one short, precise prompt for Claude, Cursor or any AI tool."
+    />
+    <meta property="og:title" content="Pinprompt: point at it, say what to change" />
+    <meta
+      property="og:description"
+      content="Comment on your running React app, then copy one short, precise prompt for any AI tool."
+    />
+    <meta property="og:image" content="https://pinprompt.hizkiajuan.com/shots/hero.png" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/icon-96.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#121110" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="nav" aria-label="Main">
+        <a class="brand" href="/"><img src="../../extension/icons/icon.svg" alt="" />Pinprompt</a>
+        <div class="nav-links">
+          <a href="#how">How it works</a>
+          <a href="#prompt">The prompt</a>
+          <a href="#install">Install</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+        <a class="btn btn-ink" href="#install">Install</a>
+      </nav>
+    </div>
+
+    <header class="wrap hero">
+      <p class="eyebrow">A Chrome extension for React developers</p>
+      <h1>
+        <span class="mark"
+          >Point<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true">
+            <path
+              d="M18 58 C 10 20, 120 4, 178 22 C 204 32, 196 82, 120 92 C 60 98, 8 84, 22 44"
+              fill="none"
+              stroke-width="3.2"
+              stroke-linecap="round"
+              vector-effect="non-scaling-stroke"
+            /></svg
+        ></span>
+        at it.<br />Say what to change.
+      </h1>
+      <div class="hero-row">
+        <p class="lede">
+          Comment on your running app the way you comment in Figma. Pinprompt turns every pin into
+          one short, precise prompt for Claude, Cursor or any AI tool you paste into.
+        </p>
+        <div class="cta">
+          <span class="cta-meta"
+            ><b data-version>dev</b><span class="dot"></span>Free<span class="dot"></span>Chrome
+            130+</span
+          >
+          <div class="cta-buttons">
+            <!--if-store-->
+            <a class="btn btn-mark" href="__STORE_URL__"
+              ><img src="../public/chrome.svg" alt="" />Add to Chrome</a
+            >
+            <!--/if-store-->
+            <!--if-no-store-->
+            <a class="btn btn-mark" href="__ZIP__" download
+              ><img src="../public/chrome.svg" alt="" />Download for Chrome</a
+            >
+            <!--/if-no-store-->
+            <a class="btn btn-line" href="#install">How to install</a>
+          </div>
+          <span class="cta-note"
+            >Runs only on the origins you allow. Nothing leaves your browser.</span
+          >
+        </div>
+      </div>
+      <figure class="shot">
+        <img
+          src="../public/shots/hero.png"
+          width="1280"
+          height="800"
+          alt="Pinprompt on a billing page: pin 1 on the Upgrade plan button with its comment open, pin 2 over the usage chart, pin 3 on an invoice row, and the Copy prompt bubble in the corner."
+        />
+      </figure>
+    </header>
+
+    <main>
+      <section class="wrap split" id="prompt">
+        <div>
+          <p class="eyebrow">The prompt</p>
+          <h2>Short on purpose.</h2>
+          <p>
+            Your AI tool needs to find the code and know what to do, not read a DOM dump. Each pin
+            becomes two lines: what the element is, in names it can search for, and what should
+            change.
+          </p>
+          <div class="stats">
+            <strong>~250</strong><span>characters a pin</span> <strong class="accent">10</strong
+            ><span>pins a tab, across routes</span>
+          </div>
+        </div>
+        <figure class="prompt">
+          <figcaption class="prompt-head">
+            <span class="pin">2</span><span>Copied as Markdown</span><span>491 chars</span>
+          </figcaption>
+          <pre><span class="k"># UI changes</span>
+
+2 changes to my React app at http://localhost:5173/settings/billing, each pinned to an element. Edit only those elements and the code they need; leave everything else as it is.
+
+<span class="k">1.</span> Button in PlanCard &gt; BillingPage
+   <span class="d">Element:</span> `&lt;button&gt;`, "Upgrade plan", `#upgrade`
+   <span class="d">Change:</span> Make this the primary action: filled, full width on mobile, and label it "Upgrade to Pro"
+
+<span class="k">2.</span> Region over UsageCard in BillingPage
+   <span class="d">Element:</span> `&lt;div&gt;`, "Usage this month", shadcn Card
+   <span class="d">Change:</span> Show the month as a percentage of the 2,000 limit; amber above 80%.</pre>
+        </figure>
+      </section>
+
+      <section class="wrap" id="how">
+        <p class="eyebrow">How it works</p>
+        <h2>Three moves, and you never leave the page.</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-keys">
+              <span data-keys data-mac="⇧ ⌘ P" data-other="Ctrl Shift P"
+                ><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd></span
+              ><span
+                class="alt"
+                data-keys-alt
+                data-mac="Ctrl Shift P on Windows and Linux"
+                data-other="⇧ ⌘ P on a Mac"
+                >⇧ ⌘ P on a Mac</span
+              >
+            </div>
+            <h3>Start commenting</h3>
+            <p>
+              From anywhere, or press <kbd class="small">C</kbd> on the page. Hover names the React
+              component; clicks never reach your app.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-keys"><kbd>Click</kbd> <kbd>Drag</kbd></div>
+            <h3>Pin it and say what to change</h3>
+            <p>
+              A numbered pin drops on the element and a comment box opens right there.
+              <span data-keys data-mac="⌘ ↩" data-other="Ctrl Enter" data-small
+                ><kbd class="small">Ctrl</kbd> <kbd class="small">Enter</kbd></span
+              >
+              saves.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-keys"><kbd>Copy prompt</kbd></div>
+            <h3>Paste into your AI tool</h3>
+            <p>
+              One click on the bubble copies every pin as one prompt. Pins stay put for the next
+              round, even through a reload.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap" id="details">
+        <p class="eyebrow">What it knows</p>
+        <div class="details">
+          <div class="detail">
+            <span class="pin">A</span>
+            <div>
+              <h3>Your components, by name</h3>
+              <p>
+                Reads React's dev build for the component and its parents, so the prompt says
+                <code>PlanCard &gt; BillingPage</code>, not "the third div".
+              </p>
+            </div>
+          </div>
+          <div class="detail">
+            <span class="pin">B</span>
+            <div>
+              <h3>Fluent in shadcn/ui</h3>
+              <p>
+                Spots Button, Card, Input and every other part from <code>data-slot</code>, on
+                Tailwind v3 and v4.
+              </p>
+            </div>
+          </div>
+          <div class="detail">
+            <span class="pin">C</span>
+            <div>
+              <h3>Out of your app's way</h3>
+              <p>
+                Its UI sits in a shadow root: your styles can't break it, it can't break yours. Drag
+                the bubble to any corner.
+              </p>
+            </div>
+          </div>
+          <div class="detail">
+            <span class="pin">D</span>
+            <div>
+              <h3>Nothing leaves your browser</h3>
+              <p>
+                No account, no server, no analytics. It runs on localhost, or on a LAN or tailnet
+                host once you allow it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap" id="install">
+        <div class="install">
+          <div>
+            <img src="../../extension/icons/icon.svg" width="56" height="56" alt="" />
+            <h2>Install Pinprompt.</h2>
+            <p>
+              Free, for Chrome 130 and later. Open your dev server, press
+              <span data-keys data-mac="⇧ ⌘ P" data-other="Ctrl Shift P"
+                ><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd></span
+              >, start pinning.
+            </p>
+            <div class="install-actions">
+              <!--if-store-->
+              <a class="btn btn-mark" href="__STORE_URL__"
+                ><img src="../public/chrome.svg" alt="" />Add to Chrome</a
+              >
+              <small>Chrome Web Store</small>
+              <!--/if-store-->
+              <!--if-no-store-->
+              <a class="btn btn-mark" href="__ZIP__" download
+                ><img src="../public/chrome.svg" alt="" />Download <span data-version>dev</span></a
+              >
+              <small>The Chrome Web Store listing is on its way.</small>
+              <!--/if-no-store-->
+            </div>
+          </div>
+          <div class="manual">
+            <p class="eyebrow">Install by hand</p>
+            <ol>
+              <li>
+                <span>01</span
+                ><span
+                  >Download <a class="mono" href="__ZIP__" download>__ZIP_NAME__</a> and unzip
+                  it.</span
+                >
+              </li>
+              <li>
+                <span>02</span
+                ><span
+                  >Open <span class="mono">chrome://extensions</span> and turn on
+                  <b>Developer mode</b>.</span
+                >
+              </li>
+              <li>
+                <span>03</span><span><b>Load unpacked</b> and pick the unzipped folder.</span>
+              </li>
+              <li>
+                <span>04</span
+                ><span>Pin Pinprompt to the toolbar. localhost works right away.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap split about" id="about">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Open source, built in the open.</h2>
+        </div>
+        <div class="about-body">
+          <p>
+            Pinprompt started as a tool Juan needed: point at a broken bit of a React app and hand
+            an AI tool one exact request instead of a paragraph of "the second card, no, the other
+            one".
+          </p>
+          <p>
+            <b>Juan</b> builds small tools for everyday work and publishes them at hizkiajuan.com.
+            Pinprompt is maintained by Juan and contributors.
+          </p>
+          <div class="routes">
+            <a href="__REPO_URL__/issues"
+              ><b>Report a bug</b><span>GitHub issues, with the prompt it produced</span></a
+            >
+            <a href="__REPO_URL__"
+              ><b>Contribute</b><span>Pull requests welcome; read CONTRIBUTING first</span></a
+            >
+            <a href="https://hizkiajuan.com"><b>Say hello</b><span>hizkiajuan.com</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer">
+        <a class="brand" href="/"><img src="../../extension/icons/icon.svg" alt="" />Pinprompt</a>
+        <span data-version>dev</span>
+        <nav aria-label="Footer">
+          <a href="__REPO_URL__">GitHub</a>
+          <a href="/privacy">Privacy</a>
+          <a href="#install">Install</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

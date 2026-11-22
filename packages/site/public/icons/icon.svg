@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="pp-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D1C1B"/><stop offset="1" stop-color="#0A0A0A"/></linearGradient>
+    <linearGradient id="pp-accent" gradientUnits="userSpaceOnUse" x1="10" y1="10" x2="90" y2="100"><stop offset="0" stop-color="#FF7AD0"/><stop offset="1" stop-color="#C21D86"/></linearGradient>
+    <linearGradient id="pp-paper" gradientUnits="userSpaceOnUse" x1="10" y1="10" x2="90" y2="100"><stop offset="0" stop-color="#F6F2EB"/><stop offset="1" stop-color="#D9D2C6"/></linearGradient>
+    <clipPath id="pp-tile"><rect width="100" height="100" rx="22"/></clipPath>
+  </defs>
+  <rect width="100" height="100" rx="22" fill="url(#pp-bg)"/>
+  <g clip-path="url(#pp-tile)">
+    <rect x="20" y="20" width="32" height="32" rx="7" fill="url(#pp-accent)"/>
+    <circle cx="28" cy="28" r="3" fill="#fff" fill-opacity=".4"/>
+    <g transform="translate(45 45) scale(1.25)">
+      <path d="M0 0 L0 52 L13 40 L22 61 L33 56 L24 36 L41 36 Z" fill="url(#pp-paper)" stroke="#0A0A0A" stroke-width="2.4" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <rect x=".5" y=".5" width="99" height="99" rx="21.5" fill="none" stroke="#fff" stroke-opacity=".07"/>
+</svg>

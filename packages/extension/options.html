@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinprompt settings</title>
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="build/options/options.css" />
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <img src="icons/icon.svg" alt="" />
+        <h1>Pinprompt</h1>
+      </header>
+
+      <section id="allow-card" class="card accent" hidden>
+        <h2>Allow <span id="allow-origin"></span>?</h2>
+        <p class="muted">
+          Pinprompt only runs on origins you allow. For a host other than localhost, Chrome asks for
+          access to that host first.
+        </p>
+        <div class="row">
+          <button id="allow-button" class="button" type="button">Allow</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Allowed origins</h2>
+        <p class="muted">
+          localhost and 127.0.0.1 work right away. Any other host, such as a dev server on your LAN
+          or tailnet, asks Chrome for access when you add it.
+        </p>
+        <form id="origin-form" class="row">
+          <input id="origin-input" placeholder="http://localhost:5173" spellcheck="false" />
+          <button class="button" type="submit">Add</button>
+        </form>
+        <ul id="origins-list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Shortcuts</h2>
+        <dl class="keys">
+          <dt id="shortcut-keys"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>P</kbd></dt>
+          <dd>
+            Start commenting on the page, from anywhere. Same as the toolbar button.
+            <button id="shortcuts-button" class="link" type="button">Change it</button>
+          </dd>
+          <dt><kbd>C</kbd></dt>
+          <dd>Toggle comment mode on the page (not while typing in a field).</dd>
+          <dt id="save-keys"><kbd>Ctrl</kbd><kbd>Enter</kbd></dt>
+          <dd>Save a comment.</dd>
+          <dt><kbd>Esc</kbd></dt>
+          <dd>Cancel a comment, stop commenting, close the list.</dd>
+        </dl>
+        <p class="muted small">
+          Chrome only lets Pinprompt take a pin's screenshot after the toolbar button or the
+          shortcut, and a full page reload takes that away. Use one of them once after a reload.
+        </p>
+      </section>
+
+      <p id="status" class="muted" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="build/options/options.js"></script>
+  </body>
+</html>
