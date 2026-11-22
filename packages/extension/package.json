@@ -1,0 +1,14 @@
+{
+  "name": "@pinprompt/extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun build.ts",
+    "build:prod": "NODE_ENV=production bun build.ts"
+  },
+  "dependencies": {
+    "@pinprompt/core": "workspace:*",
+    "@pinprompt/kit": "workspace:*"
+  }
+}

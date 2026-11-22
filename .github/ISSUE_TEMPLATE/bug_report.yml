@@ -1,0 +1,57 @@
+name: Bug report
+description: Something in Pinprompt does not work as documented.
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Do not report security problems here; see SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Pinprompt version
+      description: On chrome://extensions, or the commit you built.
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Chrome version and OS
+      placeholder: Chrome 142 on macOS 15
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: The app you pinned
+      description: Framework and React version, dev or production build, and whether it uses shadcn/ui.
+      placeholder: Vite + React 19 dev build, shadcn/ui
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open http://localhost:5173
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Add screenshots if it is a UI problem.
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: The prompt Pinprompt produced
+      description: When the problem is in the prompt. Remove anything private from your app first.
+      render: markdown

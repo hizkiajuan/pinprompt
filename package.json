@@ -1,0 +1,53 @@
+{
+  "name": "pinprompt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Comment on a locally running React app and copy one Markdown prompt for your AI tool.",
+  "license": "MIT",
+  "author": "Hizkia Juan",
+  "homepage": "https://pinprompt.hizkiajuan.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hizkiajuan/pinprompt.git"
+  },
+  "bugs": "https://github.com/hizkiajuan/pinprompt/issues",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "bun fmt --no-script --check packages scripts",
+    "fmt:fix": "bun fmt --no-script packages scripts",
+    "type": "bun check --no-script",
+    "check": "bun run lint && bun run fmt && bun run type",
+    "fix": "bun run lint:fix && bun run fmt:fix && bun run type",
+    "build": "bun run --cwd packages/extension build",
+    "build:ci": "bun run check && bun test && bun run build",
+    "package": "bun scripts/package.ts",
+    "release": "bun --no-env-file scripts/release.ts",
+    "dev": "bun run --cwd packages/site dev",
+    "site": "bun run --cwd packages/site build"
+  },
+  "dependencies": {
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@pinprompt/kit": "workspace:*",
+    "@types/bun": "^1.4.4",
+    "@types/chrome": "^0.3.7",
+    "fflate": "^0.8.3",
+    "oxlint": "^1.93.0"
+  },
+  "release": {
+    "files": [
+      "packages/extension/manifest.json",
+      "packages/extension/package.json",
+      "packages/core/package.json"
+    ]
+  }
+}

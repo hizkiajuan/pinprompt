@@ -1,0 +1,199 @@
+@import "@pinprompt/kit/fonts/allo.css";
+
+/* Colours from the Pinprompt logo; the same palette as the in-page UI. */
+:root {
+  color-scheme: dark;
+  --bg: #121110;
+  --surface: #1a1917;
+  --raised: #222120;
+  --line: rgba(239, 235, 228, 0.12);
+  --text: #efebe4;
+  --muted: #a8a196;
+  --accent: #e8479f;
+  --accent-light: #ff7ad0;
+  --accent-dark: #c21d86;
+  background: var(--bg);
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 16px 64px;
+  display: grid;
+  gap: 16px;
+}
+
+h1,
+h2,
+p,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.brand img {
+  width: 40px;
+  height: 40px;
+}
+
+.card {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.card.accent {
+  border-color: rgba(232, 71, 159, 0.5);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 12.5px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0e0d0c;
+  color: inherit;
+  font: inherit;
+  font-family: var(--font-mono);
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(160deg, var(--accent-light), var(--accent-dark));
+}
+
+.button.ghost {
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 12px;
+  border-radius: 10px;
+  background: var(--raised);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 16px;
+  align-items: baseline;
+}
+
+kbd {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 2px 7px;
+  margin-right: 4px;
+  border-radius: 6px;
+  border: 1px solid #3a3633;
+  background: #26241f;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Inside the in-page settings dialog: the dialog has its own header. */
+body.embed main {
+  padding: 16px;
+  gap: 12px;
+}
+
+body.embed .brand {
+  display: none;
+}
+
+body.embed .card {
+  padding: 16px;
+}
