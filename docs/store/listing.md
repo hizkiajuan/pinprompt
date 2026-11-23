@@ -54,7 +54,7 @@ Free. For Chrome 130 and later. More at https://pinprompt.hizkiajuan.com
 
 - **Official URL:** pick `pinprompt.hizkiajuan.com` (its own Search Console property, verified through the `hizkiajuan.com` domain property). The dropdown only lists sites verified on the same Google account as the developer account.
 - **Homepage URL:** https://pinprompt.hizkiajuan.com
-- **Support URL:** https://github.com/hizkiajuan/pinprompt/issues once the repo is public; https://pinprompt.hizkiajuan.com until then
+- **Support URL:** https://github.com/hizkiajuan/pinprompt/issues
 - **Mature content:** No
 
 ## Package tab
@@ -116,6 +116,6 @@ No account needed. 1. Start any React dev server on localhost, e.g. npm create v
 
 ## Releasing an update
 
-1. `bun run release` (bumps the version in `package.json`, `manifest.json` and the workspace packages, writes the changelog, tags and publishes a GitHub release).
-2. `bun run package` writes `dist/pinprompt-<version>.zip`. CI attaches the same zip to every run.
-3. Upload the zip in the developer dashboard and submit for review.
+1. The maintainer runs `hzkjn-release` on `main` (bumps the version in `package.json` and `manifest.json`, writes the changelog, tags and publishes a GitHub release).
+2. The tag starts the release workflow, which builds `pinprompt-<version>.zip` and attaches it to that GitHub release.
+3. Download the zip from the release, upload it in the developer dashboard and submit for review.
