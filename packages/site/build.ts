@@ -8,7 +8,7 @@
    repo root when it isn't there yet (DEV=1 skips that).
 
  STORE_URL switches the calls to action from the zip to the Chrome Web Store once the listing is
- live. The version is the root package.json's, the one `bun run release` bumps.
+ live. The version is the root package.json's, the one the release bumps.
 */
 import { cp, mkdir, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";

@@ -1,0 +1,42 @@
+name: Release
+
+# The maintainer's release pushes a vX.Y.Z tag and creates the GitHub release with its notes. This
+# workflow then builds the Chrome Web Store zip from the tagged commit and attaches it, so the
+# downloadable file always comes from CI, not from a laptop.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  assets:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      CI: true
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: 1.4.4
+      - name: Install locked dependencies
+        run: bun install --frozen-lockfile
+      - name: Check, test and build
+        run: bun run build:ci
+      - name: Pack the Chrome Web Store zip
+        run: bun run package
+      - name: Attach the zip to the release
+        run: |
+          # The release is created right after the tag push; wait for it briefly.
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            gh release view "$TAG" >/dev/null 2>&1 && break
+            sleep 15
+          done
+          gh release upload "$TAG" dist/pinprompt-*.zip --clobber
