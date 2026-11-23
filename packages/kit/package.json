@@ -7,7 +7,6 @@
     "./build-info": "./src/build-info.ts",
     "./fonts": "./src/fonts/index.ts",
     "./fonts/install": "./src/fonts/install.ts",
-    "./fonts/allo.css": "./src/fonts/allo.css",
-    "./release": "./src/release.ts"
+    "./fonts/allo.css": "./src/fonts/allo.css"
   }
 }

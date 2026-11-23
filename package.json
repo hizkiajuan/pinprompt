@@ -28,7 +28,6 @@
     "build": "bun run --cwd packages/extension build",
     "build:ci": "bun run check && bun test && bun run build",
     "package": "bun scripts/package.ts",
-    "release": "bun --no-env-file scripts/release.ts",
     "dev": "bun run --cwd packages/site dev",
     "site": "bun run --cwd packages/site build"
   },

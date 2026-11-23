@@ -20,12 +20,12 @@ Get it from [pinprompt.hizkiajuan.com](https://pinprompt.hizkiajuan.com), or bui
 - `packages/core`: session rules, prompt and export building, React tree and shadcn inference
 - `packages/extension`: the Chrome MV3 extension (service worker, in-page UI in a shadow root, options page)
 - `packages/site`: the landing page at pinprompt.hizkiajuan.com, a Cloudflare Worker serving static assets
-- `packages/kit`: build, font and release helpers
+- `packages/kit`: build and font helpers
 - `docs/store`: Chrome Web Store copy and privacy policy; `PUBLISHING.md` has the steps
 
 ## Set up
 
-Everything installs from public npm; the build, font and release helpers live in `packages/kit`.
+Everything installs from public npm; the build and font helpers live in `packages/kit`.
 
 ```bash
 bun install
@@ -63,7 +63,6 @@ bun run check        # oxlint, bun fmt --check, bun check (types)
 bun test
 bun run build:ci     # check, test and build, as CI runs it
 bun run package      # dist/pinprompt-<version>.zip for the Chrome Web Store
-bun run release      # bump the version everywhere, changelog, tag, GitHub release
 ```
 
 The UI uses the **Allo** type system from `packages/kit`: the options page imports `@pinprompt/kit/fonts/allo.css`, and the in-page UI registers the Allo and mono faces under private family names (fonts can't be declared inside a shadow root), loaded through web-accessible dynamic URLs. `build.ts` copies the font files into `packages/extension/fonts/`. `build/` and `fonts/` are generated and not committed. The icon source is `packages/extension/icons/icon.svg`; the PNGs are rendered from it with `rsvg-convert -w N -h N icon.svg -o icon-N.png`.

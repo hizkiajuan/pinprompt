@@ -10,7 +10,7 @@ repository except the account and the hosted privacy policy.
 - Privacy policy text: `docs/store/privacy-policy.md`
 - A store zip: `bun run package` writes `dist/pinprompt-<version>.zip` (CI uploads the same zip as
   an artifact on every run)
-- Versioning: `bun run release` keeps `package.json` and `manifest.json` in step; a test fails if
+- Versioning: the maintainer's release keeps `package.json` and `manifest.json` in step; a test fails if
   they drift
 
 ## Still to do (by hand)
@@ -24,4 +24,4 @@ repository except the account and the hosted privacy policy.
 
 ## Updating
 
-`bun run release`, then `bun run package`, then upload the new zip and resubmit.
+Release with `hzkjn-release`; the release workflow attaches `pinprompt-<version>.zip` to the GitHub release. Upload that zip and resubmit.
