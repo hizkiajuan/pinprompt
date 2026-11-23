@@ -1,5 +1,5 @@
 // Styles for the in-page UI. They live inside Pinprompt's shadow root, so the page's CSS cannot
-// reach them and they cannot reach the page. Colours come from the logo.
+// reach them and they cannot reach the page. Colors come from the logo.
 export function uiStyles(fonts: { sans: string; mono: string }): string {
   return `
 :host {

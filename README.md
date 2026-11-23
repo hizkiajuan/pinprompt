@@ -75,7 +75,7 @@ The landing page deploys through Cloudflare Workers Builds: a push to `main` run
 
 Bug reports and pull requests are welcome; read [CONTRIBUTING.md](CONTRIBUTING.md) first. Security problems go through [SECURITY.md](SECURITY.md), not issues.
 
-## Licence
+## License
 
 [MIT](LICENSE). Made by Juan and contributors. The bundled fonts are under the SIL Open Font License (see `packages/kit/src/fonts/files`).
 

@@ -1,6 +1,6 @@
 @import "@pinprompt/kit/fonts/allo.css";
 
-/* Colours from the Pinprompt logo; the same palette as the in-page UI. */
+/* Colors from the Pinprompt logo; the same palette as the in-page UI. */
 :root {
   color-scheme: dark;
   --bg: #121110;

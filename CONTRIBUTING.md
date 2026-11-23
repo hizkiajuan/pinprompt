@@ -45,7 +45,7 @@ For UI changes (the in-page bubble, pins, comment box, tray or options page), ad
 
 Versions follow SemVer and tags are `vX.Y.Z`; the version lives in `package.json` and `manifest.json`. Before 1.0, a feature or breaking change bumps the minor version and a fix bumps the patch version. The maintainer cuts releases: the version bump, `CHANGELOG.md` and the tag come from your PR titles, and the release workflow builds the store zip from the tag and attaches it to the GitHub release.
 
-## Licence
+## License
 
 Pinprompt is MIT licensed. By submitting a pull request, you agree that your contribution is licensed under the [MIT License](LICENSE).
 

@@ -110,7 +110,7 @@ describe("react tree, shadcn inference, and capture normalization", () => {
     ]);
   });
 
-  test("inferShadcn recognises the Tailwind v4 Input recipe", () => {
+  test("inferShadcn recognizes the Tailwind v4 Input recipe", () => {
     const hints = inferShadcn(
       "file:text-foreground placeholder:text-muted-foreground border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1",
     );
