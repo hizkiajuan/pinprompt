@@ -5,7 +5,7 @@
  * `copyFontFiles` (`./install`) puts them there at build time.
  *
  * Copied from `@hzkjn/kit/fonts` (kit 0.30.0) and trimmed to Allo, so the repo builds without the
- * private kit package. All files under `files/` are SIL OFL; each folder carries its licence.
+ * private kit package. All files under `files/` are SIL OFL; each folder carries its license.
  */
 
 export const FONT_VARIANTS = [
@@ -56,8 +56,8 @@ export interface FontSystem {
   readonly files: readonly FontFile[];
   readonly fallbacks: readonly FallbackFace[];
   readonly stacks: Readonly<Record<FontVariant, readonly string[]>>;
-  /** Licence files that travel with the font files. */
-  readonly licences: readonly string[];
+  /** License files that travel with the font files. */
+  readonly licenses: readonly string[];
 }
 
 const SANS_TAIL = ["system-ui", "-apple-system", '"Segoe UI"', "Roboto", "sans-serif"];
@@ -132,7 +132,7 @@ const allo: FontSystem = {
     script: ['"Sacramento"', '"Snell Roundhand"', '"Segoe Script"', "cursive"],
     slab: ['"Zilla Slab"', "Rockwell", '"Roboto Slab"', "Georgia", "serif"],
   },
-  licences: [
+  licenses: [
     "allo/OFL.txt",
     "newsreader/OFL.txt",
     "fraunces/OFL.txt",

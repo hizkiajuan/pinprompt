@@ -9,9 +9,9 @@ test("allo.css matches fontsCss('allo')", () => {
   expect(css).toBe(fontsCss("allo"));
 });
 
-test("every Allo font file and licence is in the repo", () => {
-  const { files, licences } = fontSystems.allo;
-  for (const path of [...files.map((file) => file.file), ...licences]) {
+test("every Allo font file and license is in the repo", () => {
+  const { files, licenses } = fontSystems.allo;
+  for (const path of [...files.map((file) => file.file), ...licenses]) {
     expect(existsSync(join(import.meta.dir, "files", path))).toBe(true);
   }
 });

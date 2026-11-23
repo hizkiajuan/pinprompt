@@ -692,7 +692,7 @@ export class PinpromptApp {
   };
 
   /** Closes the composer; cancelling a brand-new pin removes it again. */
-  private async closeComposer(cancelled: boolean): Promise<void> {
+  private async closeComposer(canceled: boolean): Promise<void> {
     const editing = this.editing;
 
     this.saveDraft(null);
@@ -701,7 +701,7 @@ export class PinpromptApp {
     this.composer = null;
     this.editing = null;
 
-    if (cancelled && editing?.isNew) {
+    if (canceled && editing?.isNew) {
       const pin = this.findPin(editing.pinId);
 
       if (pin && !pin.instruction.trim()) {
